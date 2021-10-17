@@ -1,0 +1,179 @@
+form {
+    display: grid;
+    width: 100%;
+    padding: 20px;
+    background-image: linear-gradient(to right, white , skyblue);
+}
+fieldset {
+    display:grid;
+    grid-row-gap:10px;
+}
+fieldset > section {
+    margin-bottom: 2rem;   
+    display:flex;
+    flex-flow:column;
+    position: relative;    
+}
+input{
+    padding: 8px;
+}
+select:invalid + .error{
+    display: block;
+}
+select:valid+.error {
+    display: none;
+}
+label {
+    display: none;
+}
+
+.nameicon::after {
+    content:"\f007";
+}
+.dateicon::after {
+    content:"\f1fd";
+}
+.emailicon::after {
+    content: "\f0e0"; 
+}
+.passwordicon::after {
+    content:"\f084";
+}
+.phoneicon::after {
+    content: "\f095";
+}
+.gendericon::after {
+    content: "\f228";
+}
+.ageicon::after {
+    content: "\f251";
+}
+span::after {
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    right:4%;
+    top:30%;
+    font-weight: 900;
+}
+.required::after {
+    content: "*";
+    color: red;
+}
+.required+span::before {
+    content: "*";
+    color: red;
+    position: absolute;
+    left: 3px;
+    top: 12px;
+}
+aside {
+    position: relative;
+    margin-bottom: 100px;;
+
+}
+#logo {
+    display: block;
+    width:50px;
+    height:50px;
+    position: absolute;
+    left: 0;
+}
+h1 {
+    position: absolute;
+    left: 20%;
+    font-size: 35px;
+    color:cornflowerblue;
+}
+
+#submitBtn {
+    background-color: cornflowerblue;
+    width: 100%;
+}
+.error {
+    color: red;
+}
+input:valid + .error {
+    display: none;
+}
+input:not(:focus):not(:placeholder-shown):invalid {
+    border-color: red;
+}
+input:not(:focus):not(:placeholder-shown):invalid + .error {
+    display: block;
+}
+input:not(:focus):placeholder-shown:invalid + .error {
+    display: none;
+}
+#help-img {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+#help-link:hover {
+    color: cornflowerblue;
+}
+#help-link:hover+#help-img, #agreelabel {
+    display: block;
+}
+#phoneSection {
+    display: none;
+}
+#tick {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#agree {
+    width: auto;
+    margin-right: 10px;
+    box-shadow: none;
+}
+#agree:not(:checked) ~ .error {
+    display: block;
+}
+#agree:checked ~ .error {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        display: grid;
+        grid-template-columns:25% 50% 25%;
+    }
+    form {
+        grid-column:2/3;
+        margin: 50px 50px;
+        box-shadow: 3px 3px 10px black;
+    }
+    ::placeholder,
+    select:invalid {
+        color: transparent;
+    }
+    span::after {
+        top: 40%;
+        right: 2%;
+    }
+    label {
+        display: block;
+    }
+    #phoneSection {
+        margin-bottom: 2rem;   
+        display:flex;
+        flex-flow:column;
+        position: relative;    
+    }
+    #help-img {
+        width: 50%;
+    }
+    .help-section>a {
+        color: black;
+        font-size: 16px;
+    }
+    .required+span::before {
+        content: "";
+    }    
+}
